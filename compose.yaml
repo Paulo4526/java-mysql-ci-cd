@@ -1,0 +1,33 @@
+services:
+  db:
+    container_name: mysql
+    image: "mysql:latest"  # Verifique se você está usando uma imagem adequada
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_pass
+      - MYSQL_DATABASE=database
+      # Remova ou altere a linha abaixo
+      # - MYSQL_USER=root  # Remova esta linha
+      - MYSQL_USER=myuser  # Altere para um nome de usuário diferente
+      - MYSQL_PASSWORD=my_password  # Defina uma senha para o novo usuário
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_pass"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - PROFILE=dev
+      - DATABASE_URL=jdbc:mysql://db:3306/database
+      - DATABASE_USER=root
+      - DATABASE_PWD=root_pass
+
