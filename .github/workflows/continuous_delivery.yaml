@@ -38,7 +38,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'java-mysql-ci-cd-dev'
+          app-name: 'mysql-java-dev'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZURE_PROFILE }}
           images: 'index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/java-mysql-ci-cd:${{ github.sha }}'
