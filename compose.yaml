@@ -26,7 +26,7 @@ services:
         condition: service_healthy
     environment:
       - PROFILE=dev
-      - DATABASE_URL=jdbc:mysql://java-mysql-ci-dev.mysql.database.azure.com:3306/api?createDatabaseIfNotExist=true
+      - DATABASE_URL=jdbc:mysql://java-mysql-ci-cd-dev.mysql.database.azure.com:3306/api?createDatabaseIfNotExist=true
       - DATABASE_USER=java_mysql
       - DATABASE_PWD=Bueninho1!
 
