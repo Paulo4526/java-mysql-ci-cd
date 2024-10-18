@@ -1,4 +1,4 @@
-name: Teste Tornado
+name: Teste geral
 on:
   push:
     branches: "feature/**"
