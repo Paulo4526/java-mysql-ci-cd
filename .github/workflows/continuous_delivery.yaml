@@ -1,4 +1,4 @@
-name: Continuous Delivery 01
+name: Continuous Delivery 02
 on:
   push:
     branches:
