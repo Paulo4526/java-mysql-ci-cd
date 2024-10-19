@@ -35,5 +35,4 @@ public class Clima {
 
     @Column(name = "ds_local")
     private String local;
-
 }

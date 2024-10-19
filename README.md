@@ -1,4 +1,4 @@
-# Simple API Java
+# Java Mysql Ci/CD
 
 Aplicação API 
 
@@ -14,14 +14,21 @@ Aplicação API
 docker compose up --build
 ```
 
-## Testes unitários (validação)
-
-./mvnw test
-
-
 ## Documentação online (OpenAPI)
 
 http://localhost:8080/swagger-ui/index.html
 
 ![](/assets/images/swagger.png)
+
+## Link Swagger da aplicação no Azure
+
+https://mysql-java-dev-a9ahhxa8gdahakad.brazilsouth-01.azurewebsites.net/swagger-ui/index.html
+
+![](/assets/images/swagger_azure.png)
+
+## Parar e execução da Aplição
+
+```sh
+docker compose down
+```
 
